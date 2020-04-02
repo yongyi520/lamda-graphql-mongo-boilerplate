@@ -1,0 +1,21 @@
+# serverless.yml
+
+service: automation-bot-lamda-graphql
+provider:
+  name: aws
+  runtime: nodejs12.x
+functions:
+  graphql:
+    # this is formatted as <FILENAME>.<HANDLER>
+    handler: graphql.graphqlHandler
+    events:
+    - http:
+        path: graphql
+        method: post
+        cors: true
+    - http:
+        path: graphql
+        method: get
+        cors: true
+plugins:
+  - serverless-offline
