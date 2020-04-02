@@ -1,10 +1,8 @@
-const { MONGODBU, MONGODBP, MONGODBNAME } = process.env;
+const { MONGOURL } = process.env;
 
 const CONFIG = {
   // SESSION_SECRET,
-  MONGODBU,
-  MONGODBP,
-  MONGODBNAME
+  MONGOURL
 };
 
 module.exports = { ...CONFIG };

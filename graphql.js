@@ -16,9 +16,8 @@ async function start() {
     console.log('mongoose is connecting')
   } else {
     console.log('mongoose not connected')
-    const mongoDBURL = `mongodb+srv://${config.MONGODBU}:${config.MONGODBP}@shopsettings-nqe6b.mongodb.net/${config.MONGODBNAME}?retryWrites=true&w=majority`
-    console.log('mongoDBURL', mongoDBURL)
-    mongoClient = await mongoose.connect(mongoDBURL);
+    // console.log('mongo url', config.MONGOURL)
+    mongoClient = await mongoose.connect(config.MONGOURL);
     console.log('ready state after connection', mongoose.connection.readyState)
     mongoose.connection.on('error', function(err) {
       console.log('Mongoose default connection error: ' + err);
